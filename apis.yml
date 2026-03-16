@@ -1,90 +1,27 @@
-name: Amadeus Traveler Media API
-description: The Amadeus Traveler Media API provides access to travel-related media content, including photos and ratings for points of interest and hotels worldwide.
-image: https://developers.amadeus.com/images/amadeus-logo.png
-url: https://developers.amadeus.com
-created: 2024-01-01 00:00:00+00:00
-modified: 2024-01-01 00:00:00+00:00
-apis:
-- name: Amadeus Safe Place API
-  description: Returns the safety rating of a location based on the geocode (latitude and longitude).
-  image: https://developers.amadeus.com/images/amadeus-logo.png
-  humanURL: https://developers.amadeus.com/self-service/category/destination-content/api-doc/safe-place
-  baseURL: https://test.api.amadeus.com/v1
-  tags:
-  - Travel
-  - Safety
-  - Location
-  - Ratings
-  properties:
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/destination-content/api-doc/safe-place
-  - type: OpenAPI
-    url: https://developers.amadeus.com/self-service/category/destination-content/api-doc/safe-place/api-reference
-  contact:
-  - FN: Amadeus for Developers
-    email: developers@amadeus.com
-    url: https://developers.amadeus.com/support
-- name: Amadeus Points of Interest API
-  description: Find relevant points of interest (hotels, restaurants, attractions) within a specific area or radius.
-  image: https://developers.amadeus.com/images/amadeus-logo.png
-  humanURL: https://developers.amadeus.com/self-service/category/destination-content/api-doc/points-of-interest
-  baseURL: https://test.api.amadeus.com/v1
-  tags:
-  - Travel
-  - Points of Interest
-  - Location
-  - Attractions
-  properties:
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/destination-content/api-doc/points-of-interest
-  - type: OpenAPI
-    url: https://developers.amadeus.com/self-service/category/destination-content/api-doc/points-of-interest/api-reference
-  contact:
-  - FN: Amadeus for Developers
-    email: developers@amadeus.com
-    url: https://developers.amadeus.com/support
-- name: Amadeus Tours and Activities API
-  description: Find the best tours, activities, and attractions for travelers at a destination.
-  image: https://developers.amadeus.com/images/amadeus-logo.png
-  humanURL: https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities
-  baseURL: https://test.api.amadeus.com/v1
-  tags:
-  - Travel
-  - Tours
-  - Activities
-  - Experiences
-  - Booking
-  properties:
-  - type: Documentation
-    url: https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities
-  - type: OpenAPI
-    url: https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
-  contact:
-  - FN: Amadeus for Developers
-    email: developers@amadeus.com
-    url: https://developers.amadeus.com/support
-common:
-- type: Getting Started
-  url: https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335
-- type: Authentication
-  url: https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262
-- type: Portal
-  url: https://developers.amadeus.com/
-- type: Sign Up
-  url: https://developers.amadeus.com/register
-- type: Terms of Service
-  url: https://developers.amadeus.com/legal/terms-of-use
-- type: Privacy Policy
-  url: https://developers.amadeus.com/legal/privacy-policy
-maintainers:
-- FN: Amadeus for Developers
-  email: developers@amadeus.com
-  url: https://developers.amadeus.com
+aid: amadeus-traveler-media
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/apis.yml
+name: Amadeus Traveler Media
 tags:
-- Travel
-- Media
-- Content
-- Destination
-- Tourism
-- Photos
-- Points of Interest
+  - Travel
+  - Media
+  - Content
+  - Destination
+  - Tourism
+  - Photos
+  - Points of Interest
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+description: >-
+  The Amadeus Traveler Media APIs provide access to travel-related media content,
+  including photos and ratings for points of interest and hotels worldwide.
+created: '2024-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis: []
+common:
+  - url: https://developers.amadeus.com/
+    type: Portal
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
