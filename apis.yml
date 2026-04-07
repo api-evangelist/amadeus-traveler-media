@@ -3,13 +3,13 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/apis.yml
 name: Amadeus Traveler Media
 tags:
-  - Travel
-  - Media
   - Content
   - Destination
-  - Tourism
+  - Media
   - Photos
   - Points of Interest
+  - Tourism
+  - Travel
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 description: >-
