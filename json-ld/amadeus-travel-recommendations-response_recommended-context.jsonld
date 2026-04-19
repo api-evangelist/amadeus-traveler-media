@@ -1,0 +1,24 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amadeus": "https://amadeus.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "response_recommendedLocation": "amadeus:response_recommendedLocation",
+    "warnings": {
+      "@id": "amadeus:warnings",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "data": {
+      "@id": "amadeus:data",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "meta": {
+      "@id": "amadeus:meta",
+      "@type": "xsd:string"
+    }
+  }
+}

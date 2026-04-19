@@ -1,0 +1,8 @@
+{
+  "self": "https://test.api.amadeus.com/v1/area/resources?...",
+  "next": "https://test.api.amadeus.com/v1/area/resources?...",
+  "previous": "https://test.api.amadeus.com/v1/area/resources?...",
+  "last": "https://test.api.amadeus.com/v1/area/resources?...",
+  "first": "https://test.api.amadeus.com/v1/area/resources?...",
+  "up": "https://test.api.amadeus.com/v1/area/resources?..."
+}

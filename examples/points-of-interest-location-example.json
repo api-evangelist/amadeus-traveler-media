@@ -1,0 +1,17 @@
+{
+  "id": "500123",
+  "self": "sample-value",
+  "type": "location",
+  "subType": "AIRPORT",
+  "name": "Paris CDG",
+  "geoCode": "sample-value",
+  "category": "HISTORICAL",
+  "tags": [
+    [
+      "grocery",
+      "japanese",
+      "cafe"
+    ]
+  ],
+  "rank": 1
+}

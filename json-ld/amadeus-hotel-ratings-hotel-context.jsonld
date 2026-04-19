@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amadeus": "https://amadeus.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "HotelSentiment": "amadeus:HotelSentiment",
+    "hotelId": {
+      "@id": "amadeus:hotelId",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "amadeus:type",
+      "@type": "xsd:string"
+    },
+    "overallRating": {
+      "@id": "amadeus:overallRating",
+      "@type": "xsd:string"
+    },
+    "numberOfRatings": {
+      "@id": "amadeus:numberOfRatings",
+      "@type": "xsd:integer"
+    },
+    "numberOfReviews": {
+      "@id": "amadeus:numberOfReviews",
+      "@type": "xsd:integer"
+    },
+    "sentiments": {
+      "@id": "amadeus:sentiments",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amadeus": "https://amadeus.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "GeoCode": "amadeus:GeoCode",
+    "Links": "amadeus:Links",
+    "Error_500": "amadeus:Error_500",
+    "Error_404": "amadeus:Error_404",
+    "Location": "amadeus:Location",
+    "Issue": "amadeus:Issue",
+    "Collection_Meta": "amadeus:Collection_Meta",
+    "Error_400": "amadeus:Error_400",
+    "latitude": {
+      "@id": "amadeus:latitude",
+      "@type": "xsd:decimal"
+    },
+    "longitude": {
+      "@id": "amadeus:longitude",
+      "@type": "xsd:decimal"
+    },
+    "href": {
+      "@id": "amadeus:href",
+      "@type": "@id"
+    },
+    "methods": {
+      "@id": "amadeus:methods",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "errors": {
+      "@id": "amadeus:errors",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "amadeus:id",
+      "@type": "xsd:string"
+    },
+    "self": {
+      "@id": "amadeus:self",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "amadeus:type",
+      "@type": "xsd:string"
+    },
+    "subType": {
+      "@id": "amadeus:subType",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "geoCode": {
+      "@id": "amadeus:geoCode",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "amadeus:category",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "amadeus:tags",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "rank": {
+      "@id": "amadeus:rank",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "amadeus:status",
+      "@type": "xsd:integer"
+    },
+    "code": {
+      "@id": "amadeus:code",
+      "@type": "xsd:integer"
+    },
+    "title": {
+      "@id": "amadeus:title",
+      "@type": "xsd:string"
+    },
+    "detail": {
+      "@id": "amadeus:detail",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "amadeus:source",
+      "@type": "xsd:string"
+    },
+    "count": {
+      "@id": "amadeus:count",
+      "@type": "xsd:integer"
+    },
+    "links": {
+      "@id": "amadeus:links",
+      "@type": "xsd:string"
+    }
+  }
+}

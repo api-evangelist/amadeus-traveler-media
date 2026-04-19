@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/hotel-ratings-collection-links-structure.json",
+  "name": "CollectionLinks",
+  "description": "CollectionLinks schema",
+  "properties": {
+    "self": {
+      "type": "uri",
+      "example": "https://test.api.amadeus.com/v1/area/resources?..."
+    },
+    "next": {
+      "type": "uri",
+      "example": "https://test.api.amadeus.com/v1/area/resources?..."
+    },
+    "previous": {
+      "type": "uri",
+      "example": "https://test.api.amadeus.com/v1/area/resources?..."
+    },
+    "last": {
+      "type": "uri",
+      "example": "https://test.api.amadeus.com/v1/area/resources?..."
+    },
+    "first": {
+      "type": "uri",
+      "example": "https://test.api.amadeus.com/v1/area/resources?..."
+    },
+    "up": {
+      "type": "uri",
+      "example": "https://test.api.amadeus.com/v1/area/resources?..."
+    }
+  },
+  "example": {
+    "self": "https://test.api.amadeus.com/v1/area/resources?param=value"
+  },
+  "type": "object"
+}

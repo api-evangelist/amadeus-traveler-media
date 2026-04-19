@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/travel-recommendations-response_error-structure.json",
+  "name": "response_error",
+  "description": "A set of errors",
+  "type": "object",
+  "properties": {
+    "errors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Errors"
+      }
+    }
+  }
+}

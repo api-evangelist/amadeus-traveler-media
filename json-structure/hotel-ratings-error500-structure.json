@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/hotel-ratings-error500-structure.json",
+  "name": "Error500",
+  "description": "Error500 schema",
+  "properties": {
+    "errors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Error"
+      }
+    }
+  },
+  "required": [
+    "errors"
+  ],
+  "example": {
+    "errors": [
+      {
+        "status": 500,
+        "code": 141,
+        "title": "SYSTEM ERROR HAS OCCURRED"
+      }
+    ]
+  },
+  "type": "object"
+}

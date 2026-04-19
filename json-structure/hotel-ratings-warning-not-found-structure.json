@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/hotel-ratings-warning-not-found-structure.json",
+  "name": "WarningNotFound",
+  "description": "WarningNotFound schema",
+  "allOf": [
+    {
+      "$ref": "#/definitions/Warning"
+    }
+  ],
+  "example": {
+    "code": 913,
+    "title": "PROPERTIES NOT FOUND",
+    "detail": "Some of the requested properties were not found in our database.",
+    "source": {
+      "parameter": "hotelIds",
+      "pointer": "ABCDEFGH,LPCDEFGQ"
+    }
+  }
+}

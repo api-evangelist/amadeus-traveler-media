@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/hotel-ratings-hotel-sentiment-structure.json",
+  "name": "HotelSentiment",
+  "description": "HotelSentiment schema",
+  "type": "object",
+  "properties": {
+    "hotelId": {
+      "type": "string",
+      "example": "BBLONBTL",
+      "description": "Amadeus Hotel Ids are found in the Hotel Search response (parameter name is 'hotelId')"
+    },
+    "type": {
+      "type": "string",
+      "example": "hotelSentiment"
+    },
+    "overallRating": {
+      "$ref": "#/definitions/Score"
+    },
+    "numberOfRatings": {
+      "type": "int32",
+      "example": 350
+    },
+    "numberOfReviews": {
+      "type": "int32",
+      "example": 200
+    },
+    "sentiments": {
+      "type": "object",
+      "description": "Dictionary containing scores for all the available categories.  If a property does not have any category this object will not be present in the response.",
+      "properties": {
+        "sleepQuality": {
+          "$ref": "#/definitions/Score"
+        },
+        "service": {
+          "$ref": "#/definitions/Score"
+        },
+        "facilities": {
+          "$ref": "#/definitions/Score"
+        },
+        "roomComforts": {
+          "$ref": "#/definitions/Score"
+        },
+        "valueForMoney": {
+          "$ref": "#/definitions/Score"
+        },
+        "catering": {
+          "$ref": "#/definitions/Score"
+        },
+        "swimmingPool": {
+          "$ref": "#/definitions/Score"
+        },
+        "location": {
+          "$ref": "#/definitions/Score"
+        },
+        "internet": {
+          "$ref": "#/definitions/Score"
+        },
+        "pointsOfInterest": {
+          "$ref": "#/definitions/Score"
+        },
+        "staff": {
+          "$ref": "#/definitions/Score"
+        }
+      }
+    }
+  },
+  "required": [
+    "hotelId",
+    "overallRating",
+    "avgHotelAvailabilityResponseTime",
+    "numberOfRatings",
+    "numberOfReviews"
+  ]
+}

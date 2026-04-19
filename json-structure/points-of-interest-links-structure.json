@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/points-of-interest-links-structure.json",
+  "name": "Links",
+  "description": "Links schema",
+  "properties": {
+    "href": {
+      "type": "uri"
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "GET",
+          "PUT",
+          "DELETE",
+          "POST",
+          "PATCH"
+        ]
+      }
+    }
+  },
+  "example": {
+    "href": "string"
+  },
+  "type": "object"
+}

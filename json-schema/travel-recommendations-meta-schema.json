@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-schema/travel-recommendations-meta-schema.json",
+  "title": "Meta",
+  "description": "Meta information about the returned object(s) in \"data\"",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Total number of object(s) retrieved",
+      "minimum": 0,
+      "exclusiveMinimum": false
+    },
+    "links": {
+      "type": "object",
+      "title": "Links",
+      "description": "Links related to the returned object(s)",
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "url",
+          "description": "Link to the same page."
+        }
+      }
+    }
+  }
+}

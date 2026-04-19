@@ -1,0 +1,120 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Amadeus Destination Discovery
+  description: >-
+    Workflow capability for discovering destinations and media content, combining
+    Points of Interest, Hotel Ratings, Travel Recommendations, and Location Score
+    APIs. Used by travel app developers, destination marketing organizations, and
+    travel content platforms building rich destination discovery experiences.
+  tags:
+    - Amadeus
+    - Destinations
+    - Discovery
+    - Hotels
+    - Media
+    - Points of Interest
+    - Tourism
+    - Travel
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AMADEUS_BEARER_TOKEN: AMADEUS_BEARER_TOKEN
+
+capability:
+  consumes:
+    - import: points-of-interest
+      location: ./shared/points-of-interest.yaml
+    - import: hotel-ratings
+      location: ./shared/hotel-ratings.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: destination-discovery-api
+      description: Unified REST API for destination content and traveler media.
+      resources:
+        - path: /v1/destinations/pois
+          name: pois
+          description: Points of interest discovery.
+          operations:
+            - method: GET
+              name: search-pois
+              description: Find attractions and points of interest near a location.
+              call: "points-of-interest.get-points-of-interest"
+              with:
+                latitude: "rest.latitude"
+                longitude: "rest.longitude"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/destinations/pois/{poiId}
+          name: poi
+          description: Individual point of interest details.
+          operations:
+            - method: GET
+              name: get-poi
+              description: Get details for a specific point of interest.
+              call: "points-of-interest.get-poi-by-id"
+              with:
+                poiId: "rest.poiId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/hotels/ratings
+          name: hotel-ratings
+          description: Hotel sentiment ratings.
+          operations:
+            - method: GET
+              name: get-hotel-ratings
+              description: Get hotel sentiment ratings.
+              call: "hotel-ratings.get-hotel-ratings"
+              with:
+                hotelIds: "rest.hotelIds"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: destination-discovery-mcp
+      transport: http
+      description: MCP server for AI-assisted destination discovery and travel media.
+      tools:
+        - name: search-attractions
+          description: Find tourist attractions, museums, restaurants, and other points of interest near a geographic location.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "points-of-interest.get-points-of-interest"
+          with:
+            latitude: "tools.latitude"
+            longitude: "tools.longitude"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-attraction-details
+          description: Retrieve detailed information about a specific tourist attraction or point of interest.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "points-of-interest.get-poi-by-id"
+          with:
+            poiId: "tools.poiId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-hotel-sentiment-ratings
+          description: Retrieve sentiment-based ratings for hotels derived from traveler reviews, covering location, comfort, service, food, and facilities categories.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "hotel-ratings.get-hotel-ratings"
+          with:
+            hotelIds: "tools.hotelIds"
+          outputParameters:
+            - type: object
+              mapping: "$."

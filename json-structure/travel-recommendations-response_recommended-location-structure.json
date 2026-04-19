@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/travel-recommendations-response_recommended-location-structure.json",
+  "name": "response_recommendedLocation",
+  "description": "response_recommendedLocation schema",
+  "type": "object",
+  "properties": {
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Warning"
+      }
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RecommendedLocation"
+      }
+    },
+    "meta": {
+      "$ref": "#/components/schemas/Meta"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/points-of-interest-collection_-meta-structure.json",
+  "name": "Collection_Meta",
+  "description": "Collection_Meta schema",
+  "properties": {
+    "count": {
+      "type": "int32",
+      "example": 1
+    },
+    "links": {
+      "name": "CollectionLinks",
+      "properties": {
+        "self": {
+          "type": "uri",
+          "example": "https://test.api.amadeus.com/v1/area/resources?..."
+        },
+        "next": {
+          "type": "uri",
+          "example": "https://test.api.amadeus.com/v1/area/resources?..."
+        },
+        "previous": {
+          "type": "uri",
+          "example": "https://test.api.amadeus.com/v1/area/resources?..."
+        },
+        "last": {
+          "type": "uri",
+          "example": "https://test.api.amadeus.com/v1/area/resources?..."
+        },
+        "first": {
+          "type": "uri",
+          "example": "https://test.api.amadeus.com/v1/area/resources?..."
+        },
+        "up": {
+          "type": "uri",
+          "example": "https://test.api.amadeus.com/v1/area/resources?..."
+        }
+      },
+      "example": {
+        "self": "https://test.api.amadeus.com/v1/area/resources?param=value"
+      }
+    }
+  },
+  "type": "object"
+}

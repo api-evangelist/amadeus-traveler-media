@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-schema/points-of-interest-location-schema.json",
+  "title": "Location",
+  "description": "Location schema",
+  "properties": {
+    "id": {
+      "description": "id of the ressource",
+      "type": "string"
+    },
+    "self": {
+      "$ref": "#/definitions/Links"
+    },
+    "type": {
+      "description": "the resource name",
+      "type": "string",
+      "example": "location"
+    },
+    "subType": {
+      "description": "location sub type",
+      "type": "string",
+      "enum": [
+        "AIRPORT",
+        "CITY",
+        "POINT_OF_INTEREST",
+        "DISTRICT"
+      ],
+      "example": "AIRPORT"
+    },
+    "name": {
+      "description": "short name of the location",
+      "type": "string",
+      "example": "Paris CDG"
+    },
+    "geoCode": {
+      "$ref": "#/definitions/GeoCode"
+    },
+    "category": {
+      "description": "category of the location",
+      "type": "string",
+      "enum": [
+        "SIGHTS",
+        "BEACH_PARK",
+        "HISTORICAL",
+        "NIGHTLIFE",
+        "RESTAURANT",
+        "SHOPPING"
+      ],
+      "example": "HISTORICAL"
+    },
+    "tags": {
+      "description": "list of tags related to the location",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "example": [
+          "grocery",
+          "japanese",
+          "cafe"
+        ]
+      }
+    },
+    "rank": {
+      "description": "the rank is the position compared to other locations based on how famous is a place. 1 being the highest.",
+      "type": "string",
+      "example": 1
+    }
+  },
+  "type": "object"
+}

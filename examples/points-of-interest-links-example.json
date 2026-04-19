@@ -1,0 +1,6 @@
+{
+  "href": "https://example.com/path/abc123",
+  "methods": [
+    "PATCH"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/hotel-ratings-error401-structure.json",
+  "name": "Error401",
+  "description": "Error401 schema",
+  "properties": {
+    "errors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Error"
+      }
+    }
+  },
+  "required": [
+    "errors"
+  ],
+  "example": {
+    "errors": [
+      {
+        "status": 401,
+        "code": 20,
+        "title": "RESTRICTED",
+        "detail": "Query unauthorized"
+      }
+    ]
+  },
+  "type": "object"
+}

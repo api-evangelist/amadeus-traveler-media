@@ -1,0 +1,83 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Amadeus Hotel Ratings API
+  description: Shared capability for retrieving sentiment-based hotel ratings from traveler reviews.
+  tags:
+    - Amadeus
+    - Hotels
+    - Ratings
+    - Reviews
+    - Travel
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AMADEUS_BEARER_TOKEN: AMADEUS_BEARER_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: hotel-ratings
+      baseUri: https://test.api.amadeus.com/v2
+      description: Amadeus Hotel Ratings API.
+      authentication:
+        type: bearer
+        token: "{{AMADEUS_BEARER_TOKEN}}"
+      resources:
+        - name: media-hotel-ratings
+          path: /media/hotel-ratings
+          description: Hotel sentiment ratings based on traveler reviews.
+          operations:
+            - name: get-hotel-ratings
+              method: GET
+              description: Returns sentiment analysis ratings for hotels.
+              inputParameters:
+                - name: hotelIds
+                  in: query
+                  type: array
+                  required: true
+                  description: Amadeus property codes to get ratings for.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8109
+      namespace: hotel-ratings-api
+      resources:
+        - path: /v1/hotels/ratings
+          name: hotel-ratings
+          description: Hotel ratings and sentiment analysis.
+          operations:
+            - method: GET
+              name: get-hotel-ratings
+              description: Get hotel sentiment ratings.
+              call: "hotel-ratings.get-hotel-ratings"
+              with:
+                hotelIds: "rest.hotelIds"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9109
+      namespace: hotel-ratings-mcp
+      transport: http
+      tools:
+        - name: get-hotel-ratings
+          description: Retrieve sentiment-based ratings for hotels from traveler reviews, including scores for location, comfort, service, food, and facilities.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "hotel-ratings.get-hotel-ratings"
+          with:
+            hotelIds: "tools.hotelIds"
+          outputParameters:
+            - type: object
+              mapping: "$."

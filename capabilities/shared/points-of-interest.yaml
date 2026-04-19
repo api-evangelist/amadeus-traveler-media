@@ -1,0 +1,130 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: Amadeus Points of Interest API
+  description: Shared capability for discovering points of interest by location and retrieving detailed POI information.
+  tags:
+    - Amadeus
+    - Destinations
+    - Points of Interest
+    - Tourism
+    - Travel
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AMADEUS_BEARER_TOKEN: AMADEUS_BEARER_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: points-of-interest
+      baseUri: https://test.api.amadeus.com/v1
+      description: Amadeus Points of Interest API.
+      authentication:
+        type: bearer
+        token: "{{AMADEUS_BEARER_TOKEN}}"
+      resources:
+        - name: reference-data-locations-pois
+          path: /reference-data/locations/pois
+          description: Search for points of interest by location.
+          operations:
+            - name: get-points-of-interest
+              method: GET
+              description: Returns points of interest around a specific location.
+              inputParameters:
+                - name: latitude
+                  in: query
+                  type: number
+                  required: true
+                  description: Latitude of search location.
+                - name: longitude
+                  in: query
+                  type: number
+                  required: true
+                  description: Longitude of search location.
+                - name: radius
+                  in: query
+                  type: integer
+                  required: false
+                  description: Search radius in kilometers (max 20).
+                - name: categories
+                  in: query
+                  type: array
+                  required: false
+                  description: Filter by POI category (SIGHTS_MUSEUMS, NIGHTLIFE, etc.).
+                - name: page[limit]
+                  in: query
+                  type: integer
+                  required: false
+                  description: Maximum number of results per page.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: get-poi-by-id
+              method: GET
+              description: Returns details for a specific point of interest.
+              inputParameters:
+                - name: poiId
+                  in: path
+                  type: string
+                  required: true
+                  description: Unique identifier of the point of interest.
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8108
+      namespace: points-of-interest-api
+      resources:
+        - path: /v1/destinations/pois
+          name: pois
+          description: Points of interest search.
+          operations:
+            - method: GET
+              name: get-points-of-interest
+              description: Find points of interest near a location.
+              call: "points-of-interest.get-points-of-interest"
+              with:
+                latitude: "rest.latitude"
+                longitude: "rest.longitude"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9108
+      namespace: points-of-interest-mcp
+      transport: http
+      tools:
+        - name: search-points-of-interest
+          description: Find tourist attractions, restaurants, museums, and other points of interest near a location.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "points-of-interest.get-points-of-interest"
+          with:
+            latitude: "tools.latitude"
+            longitude: "tools.longitude"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-point-of-interest
+          description: Get detailed information about a specific point of interest.
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "points-of-interest.get-poi-by-id"
+          with:
+            poiId: "tools.poiId"
+          outputParameters:
+            - type: object
+              mapping: "$."

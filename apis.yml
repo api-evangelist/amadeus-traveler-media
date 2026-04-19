@@ -13,15 +13,204 @@ tags:
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 description: >-
-  The Amadeus Traveler Media APIs provide access to travel-related media content,
-  including photos and ratings for points of interest and hotels worldwide.
+  The Amadeus Traveler Media APIs provide access to travel-related media and
+  destination content, including photos, ratings, and information for points of
+  interest, hotels, and destinations worldwide. These APIs power travel apps,
+  destination guides, and travel planning platforms with rich content for tourist
+  attractions, hotel sentiment ratings, travel recommendations, and location
+  scoring.
 created: '2024-01-01'
-modified: '2026-03-16'
+modified: '2026-04-19'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: amadeus-traveler-media:points-of-interest-api
+    name: Points of Interest API
+    description: >-
+      The Amadeus Points of Interest API provides data on tourist attractions,
+      restaurants, museums, nightlife, shopping, and parks near a specified
+      location. Returns POI name, category, geographic coordinates, and ranking
+      scores to help travelers discover what to do at a destination.
+    humanURL: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+    baseURL: https://test.api.amadeus.com/v1
+    tags:
+      - Destinations
+      - Points of Interest
+      - Tourism
+      - Travel
+    properties:
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+      - type: APIReference
+        url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest/api-reference
+      - type: OpenAPI
+        url: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml
+  - aid: amadeus-traveler-media:hotel-ratings-api
+    name: Hotel Ratings API
+    description: >-
+      The Amadeus Hotel Ratings API uses sentiment analysis of hotel reviews to
+      provide overall hotel ratings and ratings for specific categories including
+      location, comfort, service, staff, internet, food, facilities, pool, and
+      sleep quality. Ratings help travelers make informed accommodation decisions.
+    humanURL: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
+    baseURL: https://test.api.amadeus.com/v2
+    tags:
+      - Hotels
+      - Ratings
+      - Reviews
+      - Sentiment
+      - Travel
+    properties:
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
+      - type: APIReference
+        url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings/api-reference
+      - type: OpenAPI
+        url: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml
+  - aid: amadeus-traveler-media:travel-recommendations-api
+    name: Travel Recommendations API
+    description: >-
+      The Amadeus Travel Recommendations API provides personalized destination
+      recommendations based on a traveler's origin city and travel history.
+      Returns top recommended cities with descriptions, scoring, and links to
+      destination content to inspire future travel planning.
+    humanURL: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
+    baseURL: https://test.api.amadeus.com/v1
+    tags:
+      - Destinations
+      - Recommendations
+      - Tourism
+      - Travel
+    properties:
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
+      - type: OpenAPI
+        url: openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml
+  - aid: amadeus-traveler-media:location-score-api
+    name: Location Score API
+    description: >-
+      The Amadeus Location Score API scores geographic locations for different
+      traveler personas including Shopping, Restaurant, Nightlife, Sightseeing,
+      and Beach. Helps travelers and travel apps understand the character of a
+      neighborhood or destination for their travel style.
+    humanURL: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
+    baseURL: https://test.api.amadeus.com/v1
+    tags:
+      - Destinations
+      - Location
+      - Scoring
+      - Tourism
+      - Travel
+    properties:
+      - type: Documentation
+        url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
+      - type: OpenAPI
+        url: openapi/amadeus-traveler-media-location-score-openapi.yaml
 common:
-  - url: https://developers.amadeus.com/
-    type: Portal
+  - type: Portal
+    url: https://developers.amadeus.com/
+  - type: GettingStarted
+    url: https://developers.amadeus.com/self-service/apis-docs/guides/developer-guides/
+  - type: Authentication
+    url: https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262
+  - type: SignUp
+    url: https://developers.amadeus.com/register
+  - type: Pricing
+    url: https://developers.amadeus.com/pricing
+  - type: Blog
+    url: https://developers.amadeus.com/blog
+  - type: FAQ
+    url: https://developers.amadeus.com/self-service/apis-docs/guides/developer-guides/faq/
+  - type: Support
+    url: https://developers.amadeus.com/support
+  - type: TermsOfService
+    url: https://developers.amadeus.com/legal/terms-and-conditions
+  - type: PrivacyPolicy
+    url: https://developers.amadeus.com/legal/privacy-policy
+  - type: GitHubOrganization
+    url: https://github.com/amadeus4dev
+  - type: SDK
+    url: https://github.com/amadeus4dev/amadeus-python
+    title: Python SDK
+  - type: SDK
+    url: https://github.com/amadeus4dev/amadeus-node
+    title: Node.js SDK
+  - type: SDK
+    url: https://github.com/amadeus4dev/amadeus-java
+    title: Java SDK
+  - type: StatusPage
+    url: https://developers.amadeus.com/status
+  - type: SpectralRules
+    url: rules/amadeus-traveler-media-spectral-rules.yml
+  - type: NaftikoCapability
+    url: capabilities/destination-discovery.yaml
+  - type: Vocabulary
+    url: vocabulary/amadeus-traveler-media-vocabulary.yaml
+  - type: Features
+    data:
+      - name: Points of Interest Discovery
+        description: >-
+          Discover tourist attractions, restaurants, museums, and nightlife
+          venues near any geographic location with ranking scores.
+      - name: Hotel Sentiment Ratings
+        description: >-
+          Access sentiment-based hotel ratings derived from thousands of
+          traveler reviews covering all key aspects of the hotel experience.
+      - name: Personalized Travel Recommendations
+        description: >-
+          Get AI-powered destination recommendations tailored to a traveler's
+          origin and travel history patterns.
+      - name: Location Scoring by Persona
+        description: >-
+          Score any neighborhood for specific traveler personas including
+          Shoppers, Foodies, Nightlife Seekers, Sightseers, and Beach Lovers.
+      - name: Rich Destination Content
+        description: >-
+          Combine POI data, hotel ratings, and location scores to create
+          comprehensive destination guides and travel media content.
+  - type: UseCases
+    data:
+      - name: Travel App Destination Guide
+        description: >-
+          Build destination guide features in travel apps showing attractions,
+          restaurants, and nightlife with ratings and location context.
+      - name: Hotel Comparison Platform
+        description: >-
+          Display sentiment-based ratings alongside hotel pricing to help
+          travelers choose accommodation based on experience quality.
+      - name: Personalized Travel Inspiration
+        description: >-
+          Power "where should I go next" features with personalized destination
+          recommendations based on traveler history and preferences.
+      - name: Neighborhood Explorer
+        description: >-
+          Help travelers understand the character of hotels or Airbnb locations
+          using location scores for shopping, dining, and nightlife.
+      - name: AI Travel Concierge
+        description: >-
+          Enable AI travel assistants to recommend attractions, rate hotels,
+          and suggest destinations based on traveler interests.
+  - type: Integrations
+    data:
+      - name: Amadeus Hotel Search
+        description: >-
+          Combine hotel ratings with hotel search results to display sentiment
+          scores alongside pricing for better hotel selection.
+      - name: Amadeus Hotel Content API
+        description: >-
+          Pair hotel ratings with property images and descriptions from the
+          Hotel Content API for complete hotel profiles.
+      - name: Amadeus Tours and Activities
+        description: >-
+          Extend POI discovery with bookable tours and activities from the
+          Amadeus Tours and Activities API.
+      - name: Amadeus City Search
+        description: >-
+          Use city search to identify destination cities before fetching POIs
+          and travel recommendations for that location.
+      - name: Amadeus Flight Inspiration Search
+        description: >-
+          Combine travel recommendations with flight inspiration search to
+          suggest both destinations and available flights.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

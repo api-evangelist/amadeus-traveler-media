@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/location-score-meta-structure.json",
+  "name": "Meta",
+  "description": "Meta information about the returned object(s) in \"data\"",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "int64",
+      "description": "Total number of object(s) retrieved",
+      "minimum": 0,
+      "exclusiveMinimum": false
+    },
+    "links": {
+      "type": "object",
+      "name": "Links",
+      "description": "Links related to the returned object(s)",
+      "properties": {
+        "self": {
+          "type": "string",
+          "format": "url",
+          "description": "Link to the same page."
+        }
+      }
+    }
+  }
+}

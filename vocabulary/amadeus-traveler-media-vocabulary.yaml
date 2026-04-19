@@ -1,0 +1,208 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Amadeus Traveler Media
+  description: >-
+    Vocabulary for the Amadeus Traveler Media API surface covering points of
+    interest, hotel ratings, travel recommendations, and location scoring.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: points-of-interest
+      name: Points of Interest API
+      version: "1.0.0"
+      baseUrl: https://test.api.amadeus.com/v1
+      status: active
+    - namespace: hotel-ratings
+      name: Hotel Ratings API
+      version: "2.0.0"
+      baseUrl: https://test.api.amadeus.com/v2
+      status: active
+    - namespace: travel-recommendations
+      name: Travel Recommendations API
+      version: "1.0.0"
+      baseUrl: https://test.api.amadeus.com/v1
+      status: active
+    - namespace: location-score
+      name: Location Score API
+      version: "1.0.0"
+      baseUrl: https://test.api.amadeus.com/v1
+      status: active
+
+  resources:
+    - name: points-of-interest
+      description: Tourist attractions, restaurants, museums, and other places of interest.
+      apis:
+        - points-of-interest
+      actions:
+        - search
+        - get
+    - name: hotel-ratings
+      description: Sentiment-based ratings for hotel properties from traveler reviews.
+      apis:
+        - hotel-ratings
+      actions:
+        - get
+    - name: travel-recommendations
+      description: Personalized destination recommendations based on traveler history.
+      apis:
+        - travel-recommendations
+      actions:
+        - get
+    - name: location-scores
+      description: Scoring of locations for various traveler personas and interests.
+      apis:
+        - location-score
+      actions:
+        - get
+
+  actions:
+    - name: search
+      description: Search for POIs near a geographic location.
+      httpMethod: GET
+      pattern: query
+    - name: get
+      description: Retrieve a specific resource by ID.
+      httpMethod: GET
+      pattern: read
+
+  schemas:
+    content:
+      - name: PointOfInterest
+        description: A tourist attraction or place of interest.
+        keyProperties:
+          - id
+          - name
+          - category
+          - geoCode
+          - rank
+      - name: HotelSentiment
+        description: Sentiment analysis result for a hotel.
+        keyProperties:
+          - hotelId
+          - overallRating
+          - sentiments
+    destination:
+      - name: Location
+        description: Geographic location with coordinates.
+        keyProperties:
+          - latitude
+          - longitude
+      - name: GeoCode
+        description: Geographic coordinates.
+        keyProperties:
+          - latitude
+          - longitude
+
+  parameters:
+    geolocation:
+      - name: latitude
+        description: Latitude for proximity search.
+      - name: longitude
+        description: Longitude for proximity search.
+      - name: radius
+        description: Search radius in kilometers.
+    filters:
+      - name: categories
+        description: Filter POIs by category type.
+    identifiers:
+      - name: poiId
+        description: Unique point of interest identifier.
+      - name: hotelIds
+        description: Amadeus property codes for hotel ratings.
+
+  enums:
+    poiCategories:
+      - SIGHTS_MUSEUMS
+      - NIGHTLIFE
+      - RESTAURANT
+      - SHOPPING
+      - BEACH_PARK
+    sentimentCategories:
+      - LOCATION
+      - COMFORT
+      - SERVICE
+      - STAFF
+      - INTERNET
+      - FOOD
+      - SLEEP_QUALITY
+      - FACILITIES
+      - VALUE_FOR_MONEY
+
+  authentication:
+    schemes:
+      - type: bearer
+        description: OAuth2 Bearer token from Amadeus Authorization API.
+
+capability:
+  workflows:
+    - name: Destination Discovery
+      file: capabilities/destination-discovery.yaml
+      description: Discover destinations with POIs, hotel ratings, and recommendations.
+      apisComined:
+        - Points of Interest API
+        - Hotel Ratings API
+      toolCount: 3
+      personas:
+        - Travel App Developer
+        - Destination Content Manager
+
+  personas:
+    - id: travel-app-developer
+      name: Travel App Developer
+      description: Developer building destination discovery and travel planning applications.
+      workflows:
+        - Destination Discovery
+    - id: destination-content-manager
+      name: Destination Content Manager
+      description: Content manager building rich destination guides with attractions and ratings.
+      workflows:
+        - Destination Discovery
+
+  domains:
+    - name: Destination Content
+      description: Tourist attractions, POIs, and destination information.
+      resources:
+        - points-of-interest
+        - travel-recommendations
+    - name: Hotel Media
+      description: Hotel ratings and traveler sentiment data.
+      resources:
+        - hotel-ratings
+
+  namespaces:
+    consumed:
+      - points-of-interest
+      - hotel-ratings
+    rest:
+      - destination-discovery-api (port 8080)
+      - points-of-interest-api (port 8108)
+      - hotel-ratings-api (port 8109)
+    mcp:
+      - destination-discovery-mcp (port 9090)
+      - points-of-interest-mcp (port 9108)
+      - hotel-ratings-mcp (port 9109)
+
+  binds:
+    - AMADEUS_BEARER_TOKEN
+
+crossReference:
+  - resource: points-of-interest
+    operations:
+      - search
+      - get
+    workflows:
+      - Destination Discovery
+    personas:
+      - Travel App Developer
+      - Destination Content Manager
+  - resource: hotel-ratings
+    operations:
+      - get
+    workflows:
+      - Destination Discovery
+    personas:
+      - Travel App Developer
+      - Destination Content Manager

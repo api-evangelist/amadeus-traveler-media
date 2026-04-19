@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/hotel-ratings-collection-meta-structure.json",
+  "name": "CollectionMeta",
+  "description": "CollectionMeta schema",
+  "properties": {
+    "count": {
+      "type": "int32",
+      "example": 1
+    },
+    "links": {
+      "$ref": "#/definitions/CollectionLinks"
+    }
+  },
+  "type": "object"
+}

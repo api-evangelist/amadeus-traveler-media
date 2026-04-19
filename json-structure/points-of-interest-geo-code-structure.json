@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/refs/heads/main/json-structure/points-of-interest-geo-code-structure.json",
+  "name": "GeoCode",
+  "description": "GeoCode schema",
+  "properties": {
+    "latitude": {
+      "description": "latitude of the location",
+      "type": "double",
+      "example": 43.580418
+    },
+    "longitude": {
+      "description": "longitude of the location",
+      "type": "double",
+      "example": 7.125102
+    }
+  },
+  "type": "object"
+}
