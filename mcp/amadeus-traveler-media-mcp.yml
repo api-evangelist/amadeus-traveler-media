@@ -1,0 +1,34 @@
+generated: '2026-06-20'
+method: derived
+status: candidate
+source: >-
+  Derived from openapi/ operations. No first-party Amadeus MCP server was found
+  (only community projects such as github.com/donghyun-chae/mcp-amadeus and
+  pypi.org/project/mcp-amadeus, none official or endorsed by Amadeus).
+server:
+  name: amadeus-traveler-media
+  transport: http
+  description: >-
+    Candidate MCP surface exposing the Amadeus Traveler Media destination-content
+    APIs (Points of Interest, Hotel Ratings, Travel Recommendations, Location
+    Score) as one tool per OpenAPI operation. Requires an Amadeus Self-Service
+    OAuth2 client-credentials token.
+tools:
+  - name: get_points_of_interest
+    description: Return points of interest for a given latitude/longitude and radius.
+    source_operation: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml#getPointsOfInterest
+  - name: get_point_of_interest
+    description: Retrieve a single point of interest by its id.
+    source_operation: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml#getPointOfInterest
+  - name: get_points_of_interest_by_square
+    description: Return points of interest within a bounding-box area.
+    source_operation: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml#getPointsOfInterestBySquare
+  - name: get_sentiments_by_hotel_ids
+    description: Return sentiment-analysis ratings for one or more hotels by hotelIds.
+    source_operation: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml#getSentimentsByHotelIds
+  - name: get_recommended_location
+    description: Return personalized destination recommendations for a traveler's city.
+    source_operation: openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml#getRecommendedLocation
+  - name: get_category_rated_areas
+    description: Score a location by traveler persona (Sightseeing, Restaurant, Nightlife, Shopping, Beach).
+    source_operation: openapi/amadeus-traveler-media-location-score-openapi.yaml#get-category-rated-areas

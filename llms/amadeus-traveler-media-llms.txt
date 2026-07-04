@@ -1,0 +1,35 @@
+# Amadeus Traveler Media
+
+> Amadeus Traveler Media is a set of Amadeus for Developers Self-Service APIs that deliver travel media and destination content — points of interest, sentiment-based hotel ratings, personalized travel recommendations, and persona-based location scores — for travel apps, destination guides, and planning platforms. APIs use OAuth2 client-credentials auth and are served under the api.amadeus.com host family (test.api.amadeus.com for the sandbox).
+
+## APIs
+
+- [Points of Interest API](https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest): Tourist attractions, restaurants, museums, nightlife, shopping, and parks near a location, with category and rank scores.
+- [Hotel Ratings API](https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings): Overall and per-category hotel ratings from sentiment analysis of traveler reviews (location, comfort, service, staff, internet, food, facilities, pool, sleep quality).
+- [Travel Recommendations API](https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations): Personalized destination recommendations from a traveler's origin city and travel history.
+- [Location Score API](https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score): Scores a location for Shopping, Restaurant, Nightlife, Sightseeing, and Beach personas.
+
+## Specs
+
+- [Points of Interest OpenAPI](https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/main/openapi/amadeus-traveler-media-points-of-interest-openapi.yaml)
+- [Hotel Ratings OpenAPI](https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/main/openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml)
+- [Travel Recommendations OpenAPI](https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/main/openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml)
+- [Location Score OpenAPI](https://raw.githubusercontent.com/api-evangelist/amadeus-traveler-media/main/openapi/amadeus-traveler-media-location-score-openapi.yaml)
+
+## Docs
+
+- [Developer Portal](https://developers.amadeus.com/)
+- [Getting Started](https://developers.amadeus.com/self-service/apis-docs/guides/developer-guides/)
+- [Authorization Guide (OAuth2)](https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262)
+- [Sign Up](https://developers.amadeus.com/register)
+- [Pricing](https://developers.amadeus.com/pricing)
+- [Support](https://developers.amadeus.com/support)
+- [Status Page](https://developers.amadeus.com/status)
+
+## SDKs
+
+- [Node.js SDK (npm: amadeus)](https://github.com/amadeus4dev/amadeus-node)
+- [Python SDK (pypi: amadeus)](https://github.com/amadeus4dev/amadeus-python)
+- [Java SDK (com.amadeus:amadeus-java)](https://github.com/amadeus4dev/amadeus-java)
+- [Ruby SDK (gem: amadeus)](https://github.com/amadeus4dev/amadeus-ruby)
+- [.NET SDK (nuget: amadeus-dotnet)](https://github.com/amadeus4dev/amadeus-dotnet)

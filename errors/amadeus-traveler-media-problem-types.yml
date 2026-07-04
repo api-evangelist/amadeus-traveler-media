@@ -1,0 +1,78 @@
+generated: '2026-06-20'
+method: derived
+source: >-
+  Derived from 4xx/5xx responses in openapi/. Amadeus returns errors as an
+  errors[] array of {status, code, title, detail, source} under
+  application/vnd.amadeus+json (a JSON:API-inspired envelope, not RFC 9457
+  application/problem+json).
+format: amadeus-json-api
+media_type: application/vnd.amadeus+json
+error_codes:
+  - code: 477
+    title: INVALID FORMAT
+  - code: 572
+    title: INVALID OPTION
+  - code: 4926
+    title: INVALID DATA RECEIVED
+  - code: 32171
+    title: MANDATORY DATA MISSING
+  - code: 1797
+    title: NOT FOUND
+  - code: 141
+    title: SYSTEM ERROR HAS OCCURRED
+  - code: 38187
+    title: RESTRICTED
+problems:
+  - status: 400
+    title: Bad Request
+    detail: >-
+      Invalid or missing query parameter (e.g. INVALID FORMAT / INVALID OPTION /
+      MANDATORY DATA MISSING). The source object identifies the offending
+      parameter.
+    source_operation: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml#getPointsOfInterest
+    remediation: Correct the flagged query parameter format/value and retry.
+  - status: 404
+    title: Not Found
+    detail: No resource found for the supplied identifier or query parameters.
+    source_operation: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml#getPointOfInterest
+    remediation: Verify the poisId exists; note the test environment covers only a subset of cities.
+  - status: 500
+    title: System Error Has Occurred
+    detail: Unexpected server-side error.
+    source_operation: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml#getPointsOfInterest
+    remediation: Retry with backoff; if persistent, contact Amadeus support.
+  - status: 400
+    title: Bad Request
+    detail: Invalid request to Hotel Ratings (e.g. PROPERTIES NOT FOUND / INVALID FORMAT).
+    source_operation: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml#getSentimentsByHotelIds
+    remediation: Check hotelIds values and formatting.
+  - status: 401
+    title: Restricted
+    detail: Missing, invalid, or expired OAuth2 access token.
+    source_operation: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml#getSentimentsByHotelIds
+    remediation: Obtain a fresh client-credentials token per the Authorization Guide and send it as a Bearer token.
+  - status: 500
+    title: System Error Has Occurred
+    detail: Unexpected server-side error.
+    source_operation: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml#getSentimentsByHotelIds
+    remediation: Retry with backoff; if persistent, contact Amadeus support.
+  - status: 400
+    title: Bad Request
+    detail: Invalid request to Travel Recommendations (INVALID FORMAT).
+    source_operation: openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml#getRecommendedLocation
+    remediation: Correct the flagged query parameter and retry.
+  - status: 500
+    title: System Error Has Occurred
+    detail: Unexpected server-side error.
+    source_operation: openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml#getRecommendedLocation
+    remediation: Retry with backoff; if persistent, contact Amadeus support.
+  - status: 400
+    title: Bad Request
+    detail: Invalid request to Location Score (INVALID FORMAT).
+    source_operation: openapi/amadeus-traveler-media-location-score-openapi.yaml#get-category-rated-areas
+    remediation: Correct the flagged query parameter and retry.
+  - status: 500
+    title: System Error Has Occurred
+    detail: Unexpected server-side error.
+    source_operation: openapi/amadeus-traveler-media-location-score-openapi.yaml#get-category-rated-areas
+    remediation: Retry with backoff; if persistent, contact Amadeus support.

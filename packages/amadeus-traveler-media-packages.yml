@@ -1,0 +1,53 @@
+generated: '2026-06-20'
+method: searched
+source: >-
+  https://registry.npmjs.org/amadeus, https://pypi.org/pypi/amadeus/json,
+  https://search.maven.org, https://rubygems.org/api/v1/gems/amadeus.json,
+  https://www.nuget.org/packages/amadeus-dotnet
+packages:
+  - language: javascript
+    registry: npm
+    name: amadeus
+    version: 11.0.0
+    url: https://www.npmjs.com/package/amadeus
+    install: npm install amadeus
+    repository: https://github.com/amadeus4dev/amadeus-node
+    official: true
+  - language: python
+    registry: pypi
+    name: amadeus
+    version: 12.0.0
+    url: https://pypi.org/project/amadeus/
+    install: pip install amadeus
+    repository: https://github.com/amadeus4dev/amadeus-python
+    official: true
+  - language: java
+    registry: maven-central
+    name: com.amadeus:amadeus-java
+    version: 10.0.0
+    url: https://central.sonatype.com/artifact/com.amadeus/amadeus-java
+    install: "implementation 'com.amadeus:amadeus-java:10.0.0'"
+    repository: https://github.com/amadeus4dev/amadeus-java
+    official: true
+  - language: ruby
+    registry: rubygems
+    name: amadeus
+    version: 5.2.1
+    url: https://rubygems.org/gems/amadeus
+    install: gem install amadeus
+    repository: https://github.com/amadeus4dev/amadeus-ruby
+    official: true
+  - language: dotnet
+    registry: nuget
+    name: amadeus-dotnet
+    version: 2.0.0
+    url: https://www.nuget.org/packages/amadeus-dotnet
+    install: dotnet add package amadeus-dotnet
+    repository: https://github.com/amadeus4dev/amadeus-dotnet
+    official: true
+notes: >-
+  Amadeus publishes first-party Self-Service SDKs under the amadeus4dev GitHub
+  org. All five wrap the full Self-Service catalog (Node, Python, Java, Ruby,
+  .NET) including the Points of Interest, Hotel Ratings, Travel Recommendations,
+  and Location Score endpoints in this repo. No first-party Go, PHP, or Rust
+  client was found in the public registries.

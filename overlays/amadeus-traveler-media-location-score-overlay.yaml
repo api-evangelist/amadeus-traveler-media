@@ -1,0 +1,21 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amadeus Location Score API
+  version: 1.0.0
+extends: openapi/amadeus-traveler-media-location-score-openapi.yaml
+x-provenance:
+  generated: '2026-06-20'
+  method: generated
+  source: openapi/amadeus-traveler-media-location-score-openapi.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: amadeus-traveler-media
+      x-apievangelist-api: location-score-api
+      x-apievangelist-category: Destination Content
+      x-apievangelist-auth: oauth2-client-credentials
+      x-apievangelist-production-host: https://api.amadeus.com
+  - target: $.info
+    description: >-
+      Amadeus Location Score scores a location for Shopping, Restaurant,
+      Nightlife, Sightseeing, and Beach traveler personas.

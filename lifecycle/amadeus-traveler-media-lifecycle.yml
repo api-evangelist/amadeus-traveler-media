@@ -1,0 +1,35 @@
+generated: '2026-06-20'
+method: derived
+source: >-
+  Derived from OpenAPI host/basePath + x-release-note history and apis.yml
+  common[] links (status page). No dedicated published deprecation/SLA policy
+  page was located for the Self-Service tier.
+versioning:
+  scheme: uri-path
+  per_api:
+    points-of-interest-api: v1
+    hotel-ratings-api: v2
+    travel-recommendations-api: v1
+    location-score-api: v1
+  docs: https://developers.amadeus.com/self-service/apis-docs/guides/developer-guides/
+  release_notes_source: OpenAPI x-release-note blocks (e.g. Points of Interest 1.0 -> 1.1.2)
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  evidence: No RFC 8594 Sunset/Deprecation header support or deprecation policy page found.
+sla:
+  url: https://developers.amadeus.com/pricing
+  uptime_target: null
+  evidence: Self-Service tier; no published uptime SLA for the free/self-service plans.
+status_page: https://developers.amadeus.com/status
+environments:
+  - name: test
+    host: https://test.api.amadeus.com
+    note: Sandbox with a data subset (limited set of cities per the Points of Interest description).
+  - name: production
+    host: https://api.amadeus.com
+deprecated_operations: []
+notes: >-
+  No operations are marked deprecated in the current OpenAPI definitions. The
+  test environment is documented as returning only a subset of production data.

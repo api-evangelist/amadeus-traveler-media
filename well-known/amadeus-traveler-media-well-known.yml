@@ -1,0 +1,43 @@
+generated: '2026-06-20'
+method: searched
+source: probed /.well-known/ across API, corporate, and developer hosts
+hosts:
+  - host: https://amadeus.com
+    documents:
+      - path: /.well-known/security.txt          # RFC 9116
+        status: 200
+        file: amadeus-traveler-media-security.txt
+  - host: https://test.api.amadeus.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://api.amadeus.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+  - host: https://developers.amadeus.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404      # host returns 200 SPA shell for any path; no real file
+      - path: /llms.txt
+        status: 404      # 200 SPA catch-all (text/html Angular shell), not a real llms.txt
+      - path: /llms-full.txt
+        status: 404      # 200 SPA catch-all, not a real llms-full.txt
+notes: >-
+  Only the corporate host amadeus.com serves a genuine RFC 9116 security.txt
+  (saved verbatim). The API hosts return hard 404s on the discovery surface.
+  developers.amadeus.com is an Angular SPA whose catch-all returns a 200 HTML
+  shell for every path, so its /llms.txt and /.well-known/security.txt are not
+  real documents and are recorded as effectively absent.

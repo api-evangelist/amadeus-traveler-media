@@ -20,7 +20,7 @@ description: >-
   attractions, hotel sentiment ratings, travel recommendations, and location
   scoring.
 created: '2024-01-01'
-modified: '2026-04-19'
+modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
   - aid: amadeus-traveler-media:points-of-interest-api
@@ -44,6 +44,8 @@ apis:
         url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest/api-reference
       - type: OpenAPI
         url: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml
+      - type: Overlay
+        url: overlays/amadeus-traveler-media-points-of-interest-overlay.yaml
   - aid: amadeus-traveler-media:hotel-ratings-api
     name: Hotel Ratings API
     description: >-
@@ -66,6 +68,8 @@ apis:
         url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings/api-reference
       - type: OpenAPI
         url: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml
+      - type: Overlay
+        url: overlays/amadeus-traveler-media-hotel-ratings-overlay.yaml
   - aid: amadeus-traveler-media:travel-recommendations-api
     name: Travel Recommendations API
     description: >-
@@ -85,6 +89,8 @@ apis:
         url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
       - type: OpenAPI
         url: openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml
+      - type: Overlay
+        url: overlays/amadeus-traveler-media-travel-recommendations-overlay.yaml
   - aid: amadeus-traveler-media:location-score-api
     name: Location Score API
     description: >-
@@ -105,6 +111,8 @@ apis:
         url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
       - type: OpenAPI
         url: openapi/amadeus-traveler-media-location-score-openapi.yaml
+      - type: Overlay
+        url: overlays/amadeus-traveler-media-location-score-overlay.yaml
 common:
   - type: Portal
     url: https://developers.amadeus.com/
@@ -118,6 +126,8 @@ common:
     url: https://developers.amadeus.com/pricing
   - type: Blog
     url: https://developers.amadeus.com/blog
+  - type: Blog
+    url: https://amadeus.com/en/insights
   - type: FAQ
     url: https://developers.amadeus.com/self-service/apis-docs/guides/developer-guides/faq/
   - type: Support
@@ -145,6 +155,22 @@ common:
     url: capabilities/destination-discovery.yaml
   - type: Vocabulary
     url: vocabulary/amadeus-traveler-media-vocabulary.yaml
+  - type: Packages
+    url: packages/amadeus-traveler-media-packages.yml
+  - type: WellKnown
+    url: well-known/amadeus-traveler-media-well-known.yml
+  - type: SecurityTxt
+    url: well-known/amadeus-traveler-media-security.txt
+  - type: MCPServer
+    url: mcp/amadeus-traveler-media-mcp.yml
+  - type: LLMsTxt
+    url: llms/amadeus-traveler-media-llms.txt
+  - type: Conformance
+    url: conformance/amadeus-traveler-media-conformance.yml
+  - type: ErrorCatalog
+    url: errors/amadeus-traveler-media-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/amadeus-traveler-media-lifecycle.yml
   - type: Features
     data:
       - name: Points of Interest Discovery

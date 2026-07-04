@@ -1,0 +1,22 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amadeus Hotel Ratings API
+  version: 1.0.0
+extends: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml
+x-provenance:
+  generated: '2026-06-20'
+  method: generated
+  source: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: amadeus-traveler-media
+      x-apievangelist-api: hotel-ratings-api
+      x-apievangelist-category: Destination Content
+      x-apievangelist-auth: oauth2-client-credentials
+      x-apievangelist-production-host: https://api.amadeus.com
+  - target: $.info
+    description: >-
+      Amadeus Hotel Ratings applies sentiment analysis of traveler reviews to
+      return overall and per-category ratings (location, comfort, service,
+      staff, internet, food, facilities, pool, sleep quality).

@@ -1,0 +1,21 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amadeus Travel Recommendations API
+  version: 1.0.0
+extends: openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml
+x-provenance:
+  generated: '2026-06-20'
+  method: generated
+  source: openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: amadeus-traveler-media
+      x-apievangelist-api: travel-recommendations-api
+      x-apievangelist-category: Destination Content
+      x-apievangelist-auth: oauth2-client-credentials
+      x-apievangelist-production-host: https://api.amadeus.com
+  - target: $.info
+    description: >-
+      Amadeus Travel Recommendations returns personalized destination
+      recommendations from a traveler's origin city and travel history.

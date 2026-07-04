@@ -1,0 +1,48 @@
+generated: '2026-06-20'
+method: derived
+source: >-
+  Derived from openapi/ (error envelope, pagination, media type) and the Amadeus
+  Self-Service Authorization Guide
+  (https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262).
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      Self-Service APIs require an OAuth2 client-credentials access token per the
+      Amadeus Authorization Guide.
+  - id: oidc
+    conforms: false
+    evidence: No OpenID Connect discovery or id_token issuance; client-credentials only.
+  - id: json-api
+    conforms: false
+    evidence: >-
+      Responses use a JSON:API-inspired shape (data / meta / links, and an
+      errors[] array of {status, code, title, detail, source}) with
+      page[limit]/page[offset] pagination, but the media type is
+      application/vnd.amadeus+json, not application/vnd.api+json.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Errors use the Amadeus errors[] envelope under application/vnd.amadeus+json,
+      not application/problem+json.
+  - id: pagination
+    conforms: true
+    evidence: >-
+      page[limit] and page[offset] query parameters with meta.links
+      self/next/previous/first/last (Points of Interest collection responses).
+  - id: rfc8594-sunset
+    conforms: false
+    evidence: No Sunset/Deprecation header usage found.
+  - id: idempotency
+    conforms: false
+    evidence: All operations are safe GET reads; no idempotency-key mechanism.
+  - id: fhir
+    conforms: false
+  - id: fapi
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: odata
+    conforms: false
+  - id: psd2
+    conforms: false

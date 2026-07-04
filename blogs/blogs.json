@@ -1,0 +1,13 @@
+{
+  "repo": "amadeus-traveler-media",
+  "feeds": [
+    {
+      "source": "https://amadeus.com/en/insights",
+      "feed_url": "https://amadeus.com/en/insights",
+      "title": "Amadeus Insights",
+      "saved": 7
+    }
+  ],
+  "fetched": "2026-07-04T13:39:06Z",
+  "post_count": 7
+}

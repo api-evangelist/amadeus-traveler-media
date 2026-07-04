@@ -1,0 +1,22 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amadeus Points of Interest API
+  version: 1.0.0
+extends: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml
+x-provenance:
+  generated: '2026-06-20'
+  method: generated
+  source: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: amadeus-traveler-media
+      x-apievangelist-api: points-of-interest-api
+      x-apievangelist-category: Destination Content
+      x-apievangelist-auth: oauth2-client-credentials
+      x-apievangelist-production-host: https://api.amadeus.com
+  - target: $.info
+    description: >-
+      Amadeus Points of Interest returns tourist attractions, restaurants,
+      museums, nightlife, shopping, and parks near a location, with category and
+      rank scoring.
