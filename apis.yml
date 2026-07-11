@@ -114,6 +114,10 @@ apis:
       - type: Overlay
         url: overlays/amadeus-traveler-media-location-score-overlay.yaml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/amadeus-traveler-media-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amadeus-traveler-media-domain-security.yml
   - type: Portal
     url: https://developers.amadeus.com/
   - type: GettingStarted
