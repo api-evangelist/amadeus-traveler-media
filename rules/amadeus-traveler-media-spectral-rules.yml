@@ -1,3 +1,21 @@
+# amadeus-traveler-media — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 2/2 servers on amadeus.com
+#   - query-params-casing: snake @ 58% (n=19)
+#   - operationid-casing: camel @ 83% (n=6)
+#   - schema-names-casing: pascal @ 50% (n=12)
+#   - schema-properties-casing: snake @ 100% (n=30)
+#   - error-schema-defined: response_error
+#   - operation-documents-400: 100% adherence
+#   - merge: kept 12 existing, added 8 measured, upgraded 0
+#   - added: servers-expected-domain, query-params-casing, operationid-casing, schema-names-casing, schema-properties-casing, error-schema-defined, operation-documents-400, no-empty-descriptions
+extends:
+  - spectral:oas
 rules:
   info-title-required:
     description: API title must be present.
@@ -27,7 +45,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^https://"
+        match: ^https://
   operation-summary-required:
     description: Every operation must have a summary.
     severity: error
@@ -42,7 +60,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^Amadeus "
+        match: '^Amadeus '
   operation-id-required:
     description: Every operation must have an operationId.
     severity: error
@@ -84,4 +102,67 @@ rules:
     given: $.components.schemas[*]
     then:
       field: description
+      function: truthy
+  servers-expected-domain:
+    description: Server URLs should be on the amadeus.com domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: amadeus\.com
+  query-params-casing:
+    description: Query parameters should be snake_case (the dominant convention in this API).
+    severity: info
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: snake
+  operationid-casing:
+    description: Operation IDs should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].operationId
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: info
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  error-schema-defined:
+    description: A shared error schema (response_error) should be defined for error payloads.
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: response_error
+      function: truthy
+  operation-documents-400:
+    description: Operations should document a 400 response (documented on 100% of this API's operations).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].responses
+    then:
+      field: '400'
+      function: truthy
+  no-empty-descriptions:
+    description: Descriptions must not be empty strings.
+    severity: warn
+    given: $..description
+    then:
       function: truthy

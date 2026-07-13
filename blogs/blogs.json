@@ -4,10 +4,25 @@
     {
       "source": "https://amadeus.com/en/insights",
       "feed_url": "https://amadeus.com/en/insights",
-      "title": "Amadeus Insights",
-      "saved": 7
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://developers.amadeus.com/pricing",
+      "feed_url": "https://developers.amadeus.com/pricing",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://developers.amadeus.com/blog",
+      "feed_url": "https://developers.amadeus.com/blog",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "fetched": "2026-07-04T13:39:06Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 7
 }
