@@ -1,0 +1,75 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml, openapi/amadeus-traveler-media-location-score-openapi.yaml,
+  openapi/amadeus-traveler-media-points-of-interest-openapi.yaml, openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 6
+  by_action_class:
+    connected: 6
+  by_consequence:
+    read: 6
+  human_in_the_loop_required: 0
+operations:
+- path: /e-reputation/hotel-sentiments
+  method: get
+  operationId: getSentimentsByHotelIds
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /location/analytics/category-rated-areas
+  method: get
+  operationId: get-category-rated-areas
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reference-data/locations/pois
+  method: get
+  operationId: getPointsOfInterest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reference-data/locations/pois/{poisId}
+  method: get
+  operationId: getPointOfInterest
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reference-data/locations/pois/by-square
+  method: get
+  operationId: getPointsOfInterestBySquare
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /reference-data/recommended-locations
+  method: get
+  operationId: getRecommendedLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none

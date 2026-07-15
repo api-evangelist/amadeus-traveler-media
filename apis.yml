@@ -114,6 +114,8 @@ apis:
       - type: Overlay
         url: overlays/amadeus-traveler-media-location-score-overlay.yaml
 common:
+  - type: AgenticAccess
+    url: agentic-access/amadeus-traveler-media-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/amadeus-traveler-media-vulnerability-disclosure.yml
   - type: DomainSecurity
