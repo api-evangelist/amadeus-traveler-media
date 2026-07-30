@@ -11,7 +11,18 @@ tags:
   - Tourism
   - Travel
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amadeus-traveler-media.png
 description: >-
   The Amadeus Traveler Media APIs provide access to travel-related media and
   destination content, including photos, ratings, and information for points of
@@ -23,96 +34,148 @@ created: '2024-01-01'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-  - aid: amadeus-traveler-media:points-of-interest-api
-    name: Points of Interest API
-    description: >-
-      The Amadeus Points of Interest API provides data on tourist attractions,
-      restaurants, museums, nightlife, shopping, and parks near a specified
-      location. Returns POI name, category, geographic coordinates, and ranking
-      scores to help travelers discover what to do at a destination.
-    humanURL: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
-    baseURL: https://test.api.amadeus.com/v1
-    tags:
-      - Destinations
-      - Points of Interest
-      - Tourism
-      - Travel
-    properties:
-      - type: Documentation
-        url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
-      - type: APIReference
-        url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest/api-reference
-      - type: OpenAPI
-        url: openapi/amadeus-traveler-media-points-of-interest-openapi.yaml
-      - type: Overlay
-        url: overlays/amadeus-traveler-media-points-of-interest-overlay.yaml
-  - aid: amadeus-traveler-media:hotel-ratings-api
-    name: Hotel Ratings API
-    description: >-
-      The Amadeus Hotel Ratings API uses sentiment analysis of hotel reviews to
-      provide overall hotel ratings and ratings for specific categories including
-      location, comfort, service, staff, internet, food, facilities, pool, and
-      sleep quality. Ratings help travelers make informed accommodation decisions.
-    humanURL: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
-    baseURL: https://test.api.amadeus.com/v2
-    tags:
-      - Hotels
-      - Ratings
-      - Reviews
-      - Sentiment
-      - Travel
-    properties:
-      - type: Documentation
-        url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
-      - type: APIReference
-        url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings/api-reference
-      - type: OpenAPI
-        url: openapi/amadeus-traveler-media-hotel-ratings-openapi.yaml
-      - type: Overlay
-        url: overlays/amadeus-traveler-media-hotel-ratings-overlay.yaml
-  - aid: amadeus-traveler-media:travel-recommendations-api
-    name: Travel Recommendations API
-    description: >-
-      The Amadeus Travel Recommendations API provides personalized destination
-      recommendations based on a traveler's origin city and travel history.
-      Returns top recommended cities with descriptions, scoring, and links to
-      destination content to inspire future travel planning.
-    humanURL: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
-    baseURL: https://test.api.amadeus.com/v1
-    tags:
-      - Destinations
-      - Recommendations
-      - Tourism
-      - Travel
-    properties:
-      - type: Documentation
-        url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
-      - type: OpenAPI
-        url: openapi/amadeus-traveler-media-travel-recommendations-openapi.yaml
-      - type: Overlay
-        url: overlays/amadeus-traveler-media-travel-recommendations-overlay.yaml
-  - aid: amadeus-traveler-media:location-score-api
-    name: Location Score API
-    description: >-
-      The Amadeus Location Score API scores geographic locations for different
-      traveler personas including Shopping, Restaurant, Nightlife, Sightseeing,
-      and Beach. Helps travelers and travel apps understand the character of a
-      neighborhood or destination for their travel style.
-    humanURL: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
-    baseURL: https://test.api.amadeus.com/v1
-    tags:
-      - Destinations
-      - Location
-      - Scoring
-      - Tourism
-      - Travel
-    properties:
-      - type: Documentation
-        url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
-      - type: OpenAPI
-        url: openapi/amadeus-traveler-media-location-score-openapi.yaml
-      - type: Overlay
-        url: overlays/amadeus-traveler-media-location-score-overlay.yaml
+- aid: amadeus-traveler-media:amadeus-traveler-media-category-rated-areas-api
+  name: Amadeus Traveler Media category-rated-areas API
+  description: >-
+    The category-rated-areas API from Amadeus Traveler Media — 1 operation(s) for category-rated-areas.
+  humanURL: >-
+    https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  baseURL: https://test.api.amadeus.com/v1
+  tags:
+  - category-rated-areas
+  properties:
+  - type: OpenAPI
+    url: openapi/amadeus-traveler-media-category-rated-areas-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest/api-reference
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings/api-reference
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
+- aid: amadeus-traveler-media:amadeus-traveler-media-hotel-ratings-api
+  name: Amadeus Traveler Media Hotel Ratings API
+  description: Sentiments about Hotels.
+  humanURL: >-
+    https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  baseURL: https://test.api.amadeus.com/v1
+  tags:
+  - Hotel Ratings
+  properties:
+  - type: OpenAPI
+    url: openapi/amadeus-traveler-media-hotel-ratings-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest/api-reference
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings/api-reference
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
+- aid: amadeus-traveler-media:amadeus-traveler-media-recommended-locations-api
+  name: Amadeus Traveler Media recommended-locations API
+  description: >-
+    The recommended-locations API from Amadeus Traveler Media — 1 operation(s) for recommended-locations.
+  humanURL: >-
+    https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  baseURL: https://test.api.amadeus.com/v1
+  tags:
+  - recommended-locations
+  properties:
+  - type: OpenAPI
+    url: openapi/amadeus-traveler-media-recommended-locations-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest/api-reference
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings/api-reference
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
+- aid: amadeus-traveler-media:amadeus-traveler-media-retrieve-api
+  name: Amadeus Traveler Media Retrieve API
+  description: The Retrieve API from Amadeus Traveler Media — 1 operation(s) for retrieve.
+  humanURL: >-
+    https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  baseURL: https://test.api.amadeus.com/v1
+  tags:
+  - Retrieve
+  properties:
+  - type: OpenAPI
+    url: openapi/amadeus-traveler-media-retrieve-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest/api-reference
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings/api-reference
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
+- aid: amadeus-traveler-media:amadeus-traveler-media-search-api
+  name: Amadeus Traveler Media Search API
+  description: The Search API from Amadeus Traveler Media — 2 operation(s) for search.
+  humanURL: >-
+    https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  baseURL: https://test.api.amadeus.com/v1
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/amadeus-traveler-media-search-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest/api-reference
+  - type: Documentation
+    url: https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings
+  - type: APIReference
+    url: >-
+      https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-ratings/api-reference
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/travel-recommendations
+  - type: Documentation
+    url: >-
+      https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
 common:
   - type: AgenticAccess
     url: agentic-access/amadeus-traveler-media-agentic-access.yml
