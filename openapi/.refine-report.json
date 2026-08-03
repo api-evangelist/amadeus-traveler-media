@@ -1,0 +1,22 @@
+{
+  "provider": "amadeus-traveler-media",
+  "sources": [
+    "amadeus-traveler-media-category-rated-areas-api-openapi.yml",
+    "amadeus-traveler-media-hotel-ratings-api-openapi.yml",
+    "amadeus-traveler-media-recommended-locations-api-openapi.yml",
+    "amadeus-traveler-media-retrieve-api-openapi.yml",
+    "amadeus-traveler-media-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "amadeus-traveler-media-category-rated-areas-api-openapi.yml",
+    "amadeus-traveler-media-hotel-ratings-api-openapi.yml",
+    "amadeus-traveler-media-recommended-locations-api-openapi.yml",
+    "amadeus-traveler-media-retrieve-api-openapi.yml",
+    "amadeus-traveler-media-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
