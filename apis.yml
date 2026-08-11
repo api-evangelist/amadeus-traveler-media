@@ -177,6 +177,8 @@ apis:
     url: >-
       https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
 common:
+  - type: Overlay
+    url: overlays/amadeus-traveler-media-hotel-ratings-overlay.yaml
   - type: AgenticAccess
     url: agentic-access/amadeus-traveler-media-agentic-access.yml
   - type: VulnerabilityDisclosure
