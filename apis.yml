@@ -29,7 +29,7 @@ description: >-
   travel recommendations, and location scoring.
 created: '2024-01-01'
 modified: '2026-06-20'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: amadeus-traveler-media:amadeus-traveler-media-category-rated-areas-api
     name: Amadeus Traveler Media category-rated-areas API
