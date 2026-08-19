@@ -1,0 +1,239 @@
+{
+  "item": [
+    {
+      "id": "8729050c-c7f7-499c-9b64-335450c3ac57",
+      "name": "Hotel Ratings",
+      "description": {
+        "content": "Sentiments about Hotels.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "81a65e68-8f41-45ff-b881-7cc921d95cb7",
+          "name": "Amadeus Get Sentiments by Amadeus Hotel Ids",
+          "request": {
+            "name": "Amadeus Get Sentiments by Amadeus Hotel Ids",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "e-reputation",
+                "hotel-sentiments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "hotelIds",
+                  "value": "<string>",
+                  "description": "(Required) Comma-separated list of Amadeus Hotel Ids (max. 3) . Amadeus Hotel Ids are found in the Hotel Search response (parameter name is 'hotelId')."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.amadeus+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8d610ddd-b8f5-4bec-98eb-595b4766f515",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "e-reputation",
+                    "hotel-sentiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "hotelIds",
+                      "value": "TELONMFS"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.amadeus+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.amadeus+json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"hotelId\": \"BBLONBTL\",\n      \"overallRating\": 82,\n      \"numberOfRatings\": 350,\n      \"numberOfReviews\": 200,\n      \"type\": \"hotelSentiment\",\n      \"sentiments\": {\n        \"sleepQuality\": 82,\n        \"service\": 82,\n        \"facilities\": 82,\n        \"roomComforts\": 82,\n        \"valueForMoney\": 82,\n        \"catering\": 82,\n        \"swimmingPool\": 82,\n        \"location\": 82,\n        \"internet\": 82,\n        \"pointsOfInterest\": 82,\n        \"staff\": 82\n      }\n    },\n    {\n      \"hotelId\": \"BBLONBTL\",\n      \"overallRating\": 82,\n      \"numberOfRatings\": 350,\n      \"numberOfReviews\": 200,\n      \"type\": \"hotelSentiment\",\n      \"sentiments\": {\n        \"sleepQuality\": 82,\n        \"service\": 82,\n        \"facilities\": 82,\n        \"roomComforts\": 82,\n        \"valueForMoney\": 82,\n        \"catering\": 82,\n        \"swimmingPool\": 82,\n        \"location\": 82,\n        \"internet\": 82,\n        \"pointsOfInterest\": 82,\n        \"staff\": 82\n      }\n    }\n  ],\n  \"meta\": {\n    \"count\": 1,\n    \"links\": {\n      \"self\": \"https://test.api.amadeus.com/v1/area/resources?param=value\"\n    }\n  },\n  \"warnings\": [\n    {\n      \"code\": 913,\n      \"title\": \"PROPERTIES NOT FOUND\",\n      \"detail\": \"Some of the requested properties were not found in our database.\",\n      \"source\": {\n        \"parameter\": \"hotelIds\",\n        \"pointer\": \"ABCDEFGH,LPCDEFGQ\"\n      }\n    },\n    {\n      \"code\": 913,\n      \"title\": \"PROPERTIES NOT FOUND\",\n      \"detail\": \"Some of the requested properties were not found in our database.\",\n      \"source\": {\n        \"parameter\": \"hotelIds\",\n        \"pointer\": \"ABCDEFGH,LPCDEFGQ\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10553bfa-e1b6-49b3-a43f-89e939ada0ab",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "e-reputation",
+                    "hotel-sentiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "hotelIds",
+                      "value": "TELONMFS"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.amadeus+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.amadeus+json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"status\": 9348,\n      \"code\": 9651,\n      \"title\": \"string\",\n      \"detail\": \"string\",\n      \"source\": {\n        \"type\": \"string\",\n        \"description\": \"A sample input to guide the user when resolving this issue\"\n      },\n      \"documentation\": \"string\"\n    },\n    {\n      \"status\": 2222,\n      \"code\": 3393,\n      \"title\": \"string\",\n      \"detail\": \"string\",\n      \"source\": {\n        \"type\": \"string\",\n        \"description\": \"A sample input to guide the user when resolving this issue\"\n      },\n      \"documentation\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "061d188b-fc00-422a-8f35-725ede16fa29",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "e-reputation",
+                    "hotel-sentiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "hotelIds",
+                      "value": "TELONMFS"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.amadeus+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.amadeus+json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"status\": 401,\n      \"code\": 20,\n      \"title\": \"RESTRICTED\",\n      \"detail\": \"Query unauthorized\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8435ae79-1f11-4bed-b07a-65f6e057bdc3",
+              "name": "Unexpected Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "e-reputation",
+                    "hotel-sentiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "hotelIds",
+                      "value": "TELONMFS"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.amadeus+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.amadeus+json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"status\": 500,\n      \"code\": 141,\n      \"title\": \"SYSTEM ERROR HAS OCCURRED\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://test.api.amadeus.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f3451cfc-eaab-4958-8661-a0502d36c7a3",
+    "name": "category-rated-areas Hotel Ratings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Before using this API, we recommend you read our **[Authorization Guide](https://developers.amadeus.com/self-service/apis-docs/guides/authorization-262)** for more information on how to generate an access token. \n\nPlease also be aware that our test environment is based on a subset of the production, this API in test only offers 24 hotels; 10 in London and 14 in New-York. You can find the list in our **[data collection](https://github.com/amadeus4dev/data-collection)**.\n",
+      "type": "text/plain"
+    }
+  }
+}
