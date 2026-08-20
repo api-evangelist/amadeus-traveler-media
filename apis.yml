@@ -105,7 +105,8 @@ apis:
     description: The Retrieve API from Amadeus Traveler Media — 1 operation(s) for retrieve.
     humanURL: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/points-of-interest
     baseURL: https://test.api.amadeus.com/v1
-    tags:
+    tags: []
+    tags_raw:
       - Retrieve
     properties:
       - type: OpenAPI
