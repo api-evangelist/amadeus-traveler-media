@@ -119,7 +119,7 @@ apis:
     baseURL: https://test.api.amadeus.com/v1
     tags: []
     tags_raw:
-      - Retrieve
+    - Retrieve
     properties:
       - type: OpenAPI
         url: openapi/amadeus-traveler-media-retrieve-api-openapi.yml
