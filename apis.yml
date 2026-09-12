@@ -160,6 +160,8 @@ apis:
       - type: Documentation
         url: https://developers.amadeus.com/self-service/category/destination-experiences/api-doc/location-score
 common:
+  - type: Website
+    url: https://www.amadeus.com/
   - type: Overlay
     url: overlays/amadeus-traveler-media-hotel-ratings-overlay.yaml
   - type: AgenticAccess
