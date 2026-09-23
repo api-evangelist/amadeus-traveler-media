@@ -1,22 +1,38 @@
 {
   "provider": "amadeus-traveler-media",
   "sources": [
-    "amadeus-traveler-media-category-rated-areas-api-openapi.yml",
-    "amadeus-traveler-media-hotel-ratings-api-openapi.yml",
-    "amadeus-traveler-media-recommended-locations-api-openapi.yml",
-    "amadeus-traveler-media-retrieve-api-openapi.yml",
-    "amadeus-traveler-media-search-api-openapi.yml"
+    "_original/amadeus-traveler-media-hotel-ratings-openapi.yaml",
+    "_original/amadeus-traveler-media-location-score-openapi.yaml",
+    "_original/amadeus-traveler-media-points-of-interest-openapi.yaml",
+    "_original/amadeus-traveler-media-travel-recommendations-openapi.yaml"
   ],
   "outputs": [
-    "amadeus-traveler-media-category-rated-areas-api-openapi.yml",
     "amadeus-traveler-media-hotel-ratings-api-openapi.yml",
-    "amadeus-traveler-media-recommended-locations-api-openapi.yml",
+    "amadeus-traveler-media-category-rated-areas-api-openapi.yml",
     "amadeus-traveler-media-retrieve-api-openapi.yml",
-    "amadeus-traveler-media-search-api-openapi.yml"
+    "amadeus-traveler-media-search-api-openapi.yml",
+    "amadeus-traveler-media-recommended-locations-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (4 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amadeus-traveler-media-hotel-ratings-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "amadeus-traveler-media-location-score-openapi.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amadeus-traveler-media-location-score-openapi.yaml: declared missing tag: category-rated-areas",
+    "amadeus-traveler-media-points-of-interest-openapi.yaml: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "amadeus-traveler-media-points-of-interest-openapi.yaml: declared missing tag: Retrieve",
+    "amadeus-traveler-media-points-of-interest-openapi.yaml: declared missing tag: Search",
+    "amadeus-traveler-media-travel-recommendations-openapi.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amadeus-traveler-media-travel-recommendations-openapi.yaml: declared missing tag: recommended-locations",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "amadeus-traveler-media-category-rated-areas-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amadeus-traveler-media-hotel-ratings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amadeus-traveler-media-recommended-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amadeus-traveler-media-retrieve-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amadeus-traveler-media-search-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
